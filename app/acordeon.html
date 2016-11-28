@@ -1,0 +1,35 @@
+<div class="container" ng-controller="accordionController">
+    <script type="text/ng-template" id="group-template.html">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" style="color:#fa39c3">
+          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+            <span uib-accordion-header ng-class="{'text-muted': isDisabled}">
+              {{heading}}
+            </span>
+          </a>
+        </h4> </div>
+            <div class="panel-collapse collapse" uib-collapse="!isOpen">
+                <div class="panel-body" style="text-align: right" ng-transclude></div>
+            </div>
+        </div>
+    </script>
+    <uib-accordion close-others="oneAtATime">
+        <div uib-accordion-group class="panel-default" heading="{{prod.getNM()}}" ng-repeat="prod in prods">
+            <li class="list-group-item"><span class="glyphicon glyphicon-euro icon-space"></span>Preu de venda<span class="badge">{{prod.getPV()}}</span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-euro icon-space"></span>Preu de Compra<span class="badge">{{prod.getPC()}}</span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-star-empty icon-space"></span>Tipus<span class="badge">{{prod.getTP()}}</span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-star icon-space"></span>Categoria<span class="badge">{{prod.getCT()}}</span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-link icon-space"></span>UdM per defecte<span class="badge">{{prod.getUM()}}</span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-shopping-cart icon-space"></span>Es pot comprar<span class="badge">{{prod.getVD()}}</span></li>
+            <li class="list-group-item"><span class="glyphicon glyphicon-shopping-cart icon-space"></span>Es pot vendre<span class="badge">{{prod.getCM()}}</span></li>
+            <li class="list-group-item">
+                <div class="container">
+                    <button type="button" class="btn btn-danger" ng-click="delete(prod.id)">Esborrar</button>
+                    <button type="button" class="btn btn-success" ng-click="edit(prod.id)">Editar</button>
+                </div>
+            </li>
+        </div>
+    </uib-accordion>
+</div>
+<!--confirmation-needed="Esborrar?"-->

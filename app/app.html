@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="tryton">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- include -->
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/customCss.css">
+    <script src="lib/js/angular.min.js"></script>
+    <script src="lib/js/ui-bootstrap.min.js"></script>
+    <script src="lib/js/angular-animate.min.js"></script>
+</head>
+
+<body ng-controller="mainController">
+    <!--   Nav   -->
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="btn btn-primary navbar-btn" ng-click="onClickNew()"> Nou Prodcute</button>
+            <a href="#" class="navbar-brand">Tryton Productes</a>
+            <!--<img alt="Logo" src="lib/css/header.png">-->
+        </div>
+    </nav>
+    <!--    custom templaes responsive  -->
+    <browse-content></browse-content>
+    <!--   Include   -->
+    <script src="controller.js"></script>
+    <script src="service.js"></script>
+    <script src="producte.js"></script>
+</body>
+
+</html>

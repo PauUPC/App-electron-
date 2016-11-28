@@ -1,0 +1,34 @@
+<div class="container" ng-controller="tableController">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Preu de venda</th>
+                <th>Preu de Compra</th>
+                <th>Tipus</th>
+                <th>Categoria</th>
+                <th>UdM per defecte</th>
+                <th>Es pot comprar</th>
+                <th>Es pot vendre</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="prod in prods">
+            <tr>
+                <td>{{prod.getNM()}}</td>
+                <td>{{prod.getPV()}}</td>
+                <td>{{prod.getPC()}}</td>
+                <td>{{prod.getTP()}}</td>
+                <td>{{prod.getCT()}}</td>
+                <td>{{prod.getUM()}}</td>
+                <td>{{prod.getVD()}}</td>
+                <td>{{prod.getCM()}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" ng-click="delete(prod.id)">Esborrar</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" ng-click="edit(prod.id)">Editar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

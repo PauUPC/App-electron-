@@ -1,0 +1,25 @@
+img {
+    display: block;
+    max-width: 100px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+}
+
+@media only screen and (max-device-width: 900px) {
+    .acordeon {
+        display: block;
+    }
+    .table {
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width: 901px) {
+    .acordeon {
+        display: none;
+    }
+    .table {
+        display: block;
+    }
+}
